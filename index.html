@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prediction Panel</title>
+
+<style>
+:root{
+  --accent:#9b8cff;
+  --glow:rgba(155,140,255,.45);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  font-family:'Poppins',Arial,sans-serif;
+  overflow:hidden;
+}
+
+/* iframe */
+#siteFrame{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+/* FLOATING BUTTON */
+#floatingBtn{
+  position:fixed;
+  width:66px;
+  height:66px;
+  border-radius:22px;
+  background:linear-gradient(145deg,#14141c,#050508);
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 20px 40px rgba(0,0,0,.9);
+  bottom:26px;
+  right:22px;
+  z-index:10;
+}
+
+/* HACK TEXT */
+#floatingBtn::after{
+  content:"HA*K";
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:2px;
+  pointer-events:none;
+}
+
+/* overlay */
+#popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  backdrop-filter:blur(10px);
+  display:none;
+  z-index:20;
+}
+
+/* CARD */
+#card{
+  width:360px;
+  margin:70px auto;
+  background:linear-gradient(180deg,#0f0f17,#050508);
+  border-radius:30px;
+  padding:20px;
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow:0 50px 120px rgba(0,0,0,1);
+}
+
+h2{
+  margin:6px 0 18px;
+  text-align:center;
+  color:#fff;
+  font-size:18px;
+}
+
+/* BUTTONS */
+.btn,.controls button{
+  width:100%;
+  padding:15px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(145deg,#16161f,#08080c);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  margin-bottom:14px;
+}
+
+.telegram{
+  background:linear-gradient(145deg,#1c1c28,#0a0a12);
+}
+
+/* RESULT */
+#resultWrap{
+  margin:16px 0;
+  padding:16px;
+  height:180px;
+  border-radius:24px;
+  background:linear-gradient(180deg,#0b0b12,#050508);
+  border:1px solid rgba(255,255,255,.05);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+#result{
+  font-family:ui-monospace,Consolas,monospace;
+  font-size:14px;
+  color:#9ef2c4;
+  white-space:pre-line;
+  text-align:center;
+}
+
+.final{
+  font-size:80%;
+  font-weight:900;
+  letter-spacing:6px;
+  color:#fff;
+}
+
+/* CONTROLS */
+.controls{
+  display:flex;
+  gap:12px;
+}
+.controls button{
+  flex:1;
+}
+.controls button:disabled{
+  opacity:.4;
+  cursor:not-allowed;
+}
+</style>
+</head>
+
+<body>
+
+<iframe id="siteFrame" src="https://speedwin.live/#/LR&RG?C=870TMK"></iframe>
+
+<div id="floatingBtn"></div>
+
+<div id="popup">
+  <div id="card">
+    <h2>Lifafa Ha*ker</h2>
+
+    <button class="btn" onclick="openReg()">Register</button>
+    <button class="btn telegram" onclick="openTG()">Telegram</button>
+
+    <div id="resultWrap">
+      <div id="result">Fast Deposit thin use this ha*k…</div>
+    </div>
+
+    <div class="controls">
+      <button onclick="exitAll()">Exit</button>
+      <button id="startBtn" onclick="start()">Start</button>
+      <button onclick="hide()">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const btn=document.getElementById('floatingBtn');
+const popup=document.getElementById('popup');
+const result=document.getElementById('result');
+const startBtn=document.getElementById('startBtn');
+const frame=document.getElementById('siteFrame');
+
+btn.onclick=()=>popup.style.display='block';
+function hide(){popup.style.display='none'}
+function exitAll(){popup.style.display='none';btn.style.display='none'}
+
+function openReg(){
+  frame.src="https://speedwin.live/#/LR&RG?C=870TMK";
+  popup.style.display='none';
+}
+function openTG(){
+  window.open('https://t.me/+gE0tjHvqT3ZkOTY1','_blank');
+}
+
+/* START */
+let cooldown=false;
+function start(){
+  if(cooldown) return;
+  cooldown=true;
+  startBtn.disabled=true;
+
+  setTimeout(()=>{
+    startBtn.disabled=false;
+    cooldown=false;
+  },10000);
+
+  const steps=[
+    "Connecting secure engine...",
+    "Checking old period...",
+    "Loading historical data...",
+    "Checking old colours...",
+    "Matching colour patterns...",
+    "Checking calculation logic...",
+    "Running probability scan...",
+    "Applying risk filter...",
+    "Cross-verifying signals...",
+    "Verified by ChatGPT AI...",
+    "Final signal locked..."
+  ];
+
+  result.className='';
+  result.textContent='';
+  let i=0;
+
+  const interval=setInterval(()=>{
+    result.textContent+=steps[i]+"\n";
+    i++;
+    if(i===steps.length){
+      clearInterval(interval);
+      setTimeout(()=>{
+        result.className='final';
+        result.textContent=Math.random()>0.5?'Fast Deposit':'Fast Deposit';
+
+        /* 👉 FINAL SHOW HOTE HI IFRAME RECHARGE LOAD */
+        frame.src="https://speedwin.live/#/recharge";
+
+      },600);
+    }
+  },500);
+}
+
+/* FLOAT DRAG */
+let drag=false;
+btn.addEventListener('touchstart',()=>drag=true);
+btn.addEventListener('touchmove',e=>{
+  if(!drag) return;
+  const y=e.touches[0].clientY;
+  btn.style.bottom=(window.innerHeight-y-33)+'px';
+  btn.style.right='12px';
+});
+btn.addEventListener('touchend',()=>drag=false);
+</script>
+
+</body>
+</html>
